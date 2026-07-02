@@ -1,0 +1,78 @@
+---
+import BaseHead from '../components/BaseHead.astro';
+import Footer from '../components/Footer.astro';
+import Header from '../components/Header.astro';
+import { SITE_CONTACT_EMAIL, SITE_TITLE } from '../consts';
+---
+
+<!doctype html>
+<html lang="fr">
+	<head>
+		<BaseHead
+			title={`Politique de confidentialité — ${SITE_TITLE}`}
+			description="Politique de confidentialité et gestion des cookies du site Chat d'Appartement."
+		/>
+	</head>
+	<body>
+		<Header />
+		<main class="prose">
+			<h1>Politique de confidentialité &amp; cookies</h1>
+
+			<h2>Données collectées</h2>
+			<p>
+				Ce site utilise un outil de mesure d'audience (à préciser : ex. Google Analytics, Plausible)
+				afin de comprendre la fréquentation et d'améliorer le contenu. Aucune donnée personnelle
+				n'est vendue à des tiers.
+			</p>
+
+			<h2>Cookies publicitaires et d'affiliation</h2>
+			<p>
+				Ce site affiche des publicités via Google AdSense et utilise des liens d'affiliation
+				(notamment Amazon). Ces partenaires peuvent déposer des cookies ou technologies similaires
+				sur votre terminal afin de :
+			</p>
+			<ul>
+				<li>Mesurer la performance des campagnes publicitaires ;</li>
+				<li>Vous proposer des publicités personnalisées selon votre navigation ;</li>
+				<li>Suivre les ventes réalisées via un lien affilié (attribution de commission).</li>
+			</ul>
+			<p>
+				<em
+					>À compléter avant mise en ligne : intégrer une bannière de consentement aux cookies
+					(CMP) conforme au RGPD/ePrivacy avant tout dépôt de cookie non essentiel — par exemple
+					via Axeptio, Didomi, ou Cookiebot — car AdSense exige un recueil de consentement valide
+					pour les utilisateurs situés dans l'Espace économique européen.</em
+				>
+			</p>
+
+			<h2>Vos droits</h2>
+			<p>
+				Conformément au RGPD, vous disposez d'un droit d'accès, de rectification et de suppression
+				des données vous concernant. Pour l'exercer, contactez-nous à
+				<a href={`mailto:${SITE_CONTACT_EMAIL}`}>{SITE_CONTACT_EMAIL}</a>.
+			</p>
+
+			<h2>Publicité Google</h2>
+			<p>
+				Google utilise des cookies publicitaires pour diffuser des annonces sur ce site. Vous
+				pouvez désactiver la publicité personnalisée en consultant les
+				<a
+					href="https://adssettings.google.com/"
+					target="_blank"
+					rel="noopener">paramètres des annonces Google</a
+				>.
+			</p>
+		</main>
+		<Footer />
+	</body>
+</html>
+
+<style>
+	.prose {
+		width: 720px;
+		max-width: calc(100% - 2em);
+		margin: 2em auto;
+		padding: 1em;
+		color: rgb(var(--gray-dark));
+	}
+</style>

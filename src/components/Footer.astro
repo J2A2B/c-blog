@@ -1,0 +1,44 @@
+---
+import { SITE_OWNER_NAME, SITE_TITLE } from '../consts';
+const today = new Date();
+---
+
+<footer>
+	&copy; {today.getFullYear()} {SITE_TITLE} — {SITE_OWNER_NAME}. Tous droits réservés.
+	<div class="legal-links">
+		<a href="/mentions-legales">Mentions légales</a>
+		<a href="/politique-de-confidentialite">Confidentialité &amp; cookies</a>
+		<a href="/contact">Contact</a>
+	</div>
+	<p class="disclaimer">
+		Cet article contient des liens affiliés. En cas d'achat via ces liens, nous pouvons percevoir
+		une commission, sans surcoût pour vous.
+	</p>
+</footer>
+<style>
+	footer {
+		padding: 2em 1em 6em 1em;
+		background: linear-gradient(var(--gray-gradient)) no-repeat;
+		color: rgb(var(--gray));
+		text-align: center;
+	}
+	.legal-links {
+		display: flex;
+		justify-content: center;
+		flex-wrap: wrap;
+		gap: 1em;
+		margin-top: 1em;
+	}
+	.legal-links a {
+		text-decoration: none;
+		color: rgb(var(--gray));
+	}
+	.legal-links a:hover {
+		color: rgb(var(--gray-dark));
+	}
+	.disclaimer {
+		max-width: 40em;
+		margin: 1em auto 0;
+		font-size: 0.8em;
+	}
+</style>

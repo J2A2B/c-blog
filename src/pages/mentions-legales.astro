@@ -1,0 +1,75 @@
+---
+import BaseHead from '../components/BaseHead.astro';
+import Footer from '../components/Footer.astro';
+import Header from '../components/Header.astro';
+import { SITE_CONTACT_EMAIL, SITE_OWNER_NAME, SITE_TITLE } from '../consts';
+---
+
+<!doctype html>
+<html lang="fr">
+	<head>
+		<BaseHead
+			title={`Mentions légales — ${SITE_TITLE}`}
+			description="Mentions légales du site Chat d'Appartement."
+		/>
+	</head>
+	<body>
+		<Header />
+		<main class="prose">
+			<h1>Mentions légales</h1>
+
+			<h2>Éditeur du site</h2>
+			<p>
+				Le site {SITE_TITLE} est édité par {SITE_OWNER_NAME}, entrepreneur individuel.<br />
+				Contact : <a href={`mailto:${SITE_CONTACT_EMAIL}`}>{SITE_CONTACT_EMAIL}</a>
+			</p>
+			<p>
+				<em
+					>À compléter avant mise en ligne : adresse postale, numéro SIRET si activité commerciale
+					déclarée, et nom du directeur de la publication.</em
+				>
+			</p>
+
+			<h2>Hébergement</h2>
+			<p>
+				Ce site est hébergé par Netlify, Inc. — 44 Montgomery Street, Suite 300, San Francisco,
+				California 94104, USA. <a href="https://www.netlify.com/" target="_blank" rel="noopener"
+					>netlify.com</a
+				>
+			</p>
+
+			<h2>Propriété intellectuelle</h2>
+			<p>
+				L'ensemble des contenus (textes, images, logo) présents sur ce site est protégé par le
+				droit d'auteur. Toute reproduction, même partielle, est soumise à autorisation préalable,
+				sauf mention contraire.
+			</p>
+
+			<h2>Liens affiliés</h2>
+			<p>
+				Ce site participe à des programmes de marketing d'affiliation (notamment le Programme
+				Partenaires Amazon). Certains liens présents sur le site sont des liens affiliés : un achat
+				effectué via ces liens peut générer une commission pour l'éditeur, sans coût additionnel
+				pour l'acheteur.
+			</p>
+
+			<h2>Publicité</h2>
+			<p>
+				Ce site diffuse des espaces publicitaires via Google AdSense. Google et ses partenaires
+				peuvent utiliser des cookies pour proposer des annonces personnalisées. Voir notre
+				<a href="/politique-de-confidentialite">politique de confidentialité</a>.
+			</p>
+		</main>
+		<Footer />
+	</body>
+</html>
+
+<style>
+	.prose {
+		width: 720px;
+		max-width: calc(100% - 2em);
+		margin: 2em auto;
+		padding: 1em;
+		color: rgb(var(--gray-dark));
+	}
+</style>
