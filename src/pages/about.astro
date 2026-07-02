@@ -1,0 +1,39 @@
+---
+import AboutHeroImage from '../assets/blog-placeholder-about.jpg';
+import { SITE_CONTACT_EMAIL } from '../consts';
+import Layout from '../layouts/BlogPost.astro';
+---
+
+<Layout
+	title="À propos"
+	description="Pourquoi ce blog dédié aux chats d'appartement, et qui l'écrit."
+	pubDate={new Date('2026-07-02')}
+	heroImage={AboutHeroImage}
+>
+	<p>
+		<strong>Chat d'Appartement</strong> est né d'un constat simple : la majorité des chats en France
+		vivent aujourd'hui exclusivement en intérieur, mais peu de ressources en français traitent
+		spécifiquement de leurs besoins particuliers (enrichissement du territoire, gestion de l'ennui,
+		alimentation adaptée à une vie sédentaire, prévention du surpoids...).
+	</p>
+	<p>
+		Ce blog partage des guides pratiques, des comparatifs de matériel (arbres à chat, litières,
+		distributeurs, jouets) et des conseils basés sur les recommandations de vétérinaires et de
+		comportementalistes félins.
+	</p>
+	<h2>Transparence</h2>
+	<p>
+		Ce site contient des liens affiliés (notamment vers Amazon et d'autres marchands). Lorsque vous
+		achetez un produit via l'un de ces liens, nous pouvons percevoir une commission, sans surcoût
+		pour vous. Cela nous permet de financer le temps passé à tester et rédiger les guides. Les
+		avis et recommandations restent indépendants du programme d'affiliation.
+	</p>
+	<p>
+		Le site affiche également des publicités (Google AdSense) pour financer son hébergement.
+	</p>
+	<h2>Contact</h2>
+	<p>
+		Une question, une suggestion de sujet, ou une erreur à signaler ? Écrivez-nous à
+		<a href={`mailto:${SITE_CONTACT_EMAIL}`}>{SITE_CONTACT_EMAIL}</a>.
+	</p>
+</Layout>

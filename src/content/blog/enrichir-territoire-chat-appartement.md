@@ -1,0 +1,28 @@
+---
+title: 'Enrichir le territoire de son chat d’appartement : le guide complet'
+description: 'Comment recréer les stimulations dont un chat 100% intérieur a besoin : hauteur, griffades, chasse simulée et cachettes.'
+pubDate: 2026-06-15
+heroImage: '../../assets/blog-placeholder-1.jpg'
+---
+
+Un chat qui vit exclusivement en appartement n'a pas accès aux stimulations naturelles d'un chat qui sort : chasse, exploration, marquage du territoire à grande échelle. Sans compensation, cela peut mener à de l'ennui, du stress, voire des troubles du comportement (griffades du canapé, malpropreté, surpoids).
+
+## Les 5 piliers de l'enrichissement du territoire
+
+1. **La hauteur** — les chats aiment observer leur environnement depuis un point en hauteur. Un arbre à chat près d'une fenêtre est souvent le meilleur investissement.
+2. **Les griffades** — proposer plusieurs griffoirs (vertical et horizontal, sisal et carton) évite que le chat ne se rabatte sur vos meubles.
+3. **La chasse simulée** — les distributeurs de nourriture interactifs ou les jouets à plumes permettent de simuler une séquence de chasse complète.
+4. **Les cachettes** — un chat stressé a besoin de pouvoir se retirer. Un simple carton ou une cabane fermée suffit souvent.
+5. **La rotation des jouets** — un chat se lasse vite d'un jouet toujours accessible. Garder 3-4 jouets en rotation hebdomadaire maintient l'intérêt.
+
+## Notre sélection de matériel
+
+Nous testons régulièrement du matériel pour actualiser cette liste. Exemple de mise en forme d'un lien affilié :
+
+<!-- Remplacer le href ci-dessous par votre vrai lien affilié une fois le programme validé -->
+
+Un exemple d'arbre à chat que nous recommandons peut être présenté ainsi dans un article (voir le composant `AffiliateLink` dans `src/components/`).
+
+## En résumé
+
+L'enrichissement du territoire n'est pas un luxe pour un chat d'intérieur : c'est ce qui remplace l'exercice physique et mental qu'il aurait en extérieur. Quelques accessoires bien choisis suffisent à transformer le quotidien d'un chat d'appartement.

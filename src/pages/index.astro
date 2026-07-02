@@ -1,0 +1,28 @@
+---
+import BaseHead from '../components/BaseHead.astro';
+import Footer from '../components/Footer.astro';
+import Header from '../components/Header.astro';
+import { SITE_DESCRIPTION, SITE_TITLE } from '../consts';
+---
+
+<!doctype html>
+<html lang="fr">
+	<head>
+		<BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
+	</head>
+	<body>
+		<Header />
+		<main>
+			<h1>🐱 Chat d'Appartement</h1>
+			<p>
+				Le guide pour offrir une belle vie à votre chat 100% intérieur : alimentation adaptée,
+				enrichissement du territoire, arbres à chat, litières, jouets et conseils de comportementalistes
+				— testés et vérifiés.
+			</p>
+			<p>
+				<a href="/blog">➜ Découvrir tous les articles</a>
+			</p>
+		</main>
+		<Footer />
+	</body>
+</html>

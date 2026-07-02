@@ -1,0 +1,30 @@
+---
+// Lien d'affiliation réutilisable : force rel="sponsored nofollow noopener" et target="_blank"
+// comme recommandé par Google pour le contenu monétisé.
+interface Props {
+	href: string;
+	label?: string;
+}
+
+const { href, label } = Astro.props;
+---
+
+<a class="affiliate-link" href={href} target="_blank" rel="sponsored nofollow noopener">
+	<slot>{label}</slot>
+	<span class="sr-only">(lien affilié, ouvre un nouvel onglet)</span>
+</a>
+
+<style>
+	.affiliate-link {
+		display: inline-block;
+		padding: 0.6em 1.2em;
+		background: rgb(var(--accent));
+		color: white;
+		border-radius: 8px;
+		text-decoration: none;
+		font-weight: 600;
+	}
+	.affiliate-link:hover {
+		background: rgb(var(--accent-dark));
+	}
+</style>
