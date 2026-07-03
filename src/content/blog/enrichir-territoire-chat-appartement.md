@@ -2,7 +2,7 @@
 title: 'Enrichir le territoire de son chat d’appartement : le guide complet'
 description: 'Comment recréer les stimulations dont un chat 100% intérieur a besoin : hauteur, griffades, chasse simulée et cachettes.'
 pubDate: 2026-06-15
-heroImage: '../../assets/blog-placeholder-1.jpg'
+heroImage: '../../assets/chaton-hero-appartement.jpg'
 ---
 
 Un chat qui vit exclusivement en appartement n'a pas accès aux stimulations naturelles d'un chat qui sort : chasse, exploration, marquage du territoire à grande échelle. Sans compensation, cela peut mener à de l'ennui, du stress, voire des troubles du comportement (griffades du canapé, malpropreté, surpoids).
