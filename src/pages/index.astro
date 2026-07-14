@@ -16,7 +16,12 @@ const posts = (await getCollection('blog')).sort(
 <!doctype html>
 <html lang="fr">
 	<head>
-		<BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
+		<BaseHead
+			title={`${SITE_TITLE} — Guides et conseils pour chat d'intérieur`}
+			description={SITE_DESCRIPTION}
+			image={HeroCat}
+			imageAlt="Chaton confortablement installé sur un canapé en appartement"
+		/>
 		<style>
 			.hero {
 				margin: 0 0 2.5em 0;
@@ -79,7 +84,7 @@ const posts = (await getCollection('blog')).sort(
 				margin: 0;
 				color: rgb(var(--gray));
 			}
-			.post-list li a:hover h4,
+			.post-list li a:hover h3,
 			.post-list li a:hover .post-date {
 				color: rgb(var(--accent));
 			}
@@ -125,7 +130,7 @@ const posts = (await getCollection('blog')).sort(
 									{post.data.heroImage && (
 										<Image width={720} height={360} src={post.data.heroImage} alt="" />
 									)}
-									<h4 class="post-title">{post.data.title}</h4>
+									<h3 class="post-title">{post.data.title}</h3>
 									<p class="post-date">
 										<FormattedDate date={post.data.pubDate} />
 									</p>
