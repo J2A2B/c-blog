@@ -23,6 +23,10 @@ const posts = (await getCollection('blog', ({ data }) => !data.draft)).sort(
 			imageAlt="Chaton confortablement installé sur un canapé en appartement"
 		/>
 		<style>
+			main {
+				width: 1200px;
+				max-width: calc(100% - 2em);
+			}
 			.hero {
 				margin: 0 0 2.5em 0;
 			}
@@ -54,15 +58,12 @@ const posts = (await getCollection('blog', ({ data }) => !data.draft)).sort(
 				}
 			}
 			.post-list {
-				display: flex;
-				flex-wrap: wrap;
+				display: grid;
+				grid-template-columns: repeat(3, 1fr);
 				gap: 2rem;
 				list-style-type: none;
 				margin: 0;
 				padding: 0;
-			}
-			.post-list li {
-				width: calc(50% - 1rem);
 			}
 			.post-list li * {
 				text-decoration: none;
@@ -91,12 +92,17 @@ const posts = (await getCollection('blog', ({ data }) => !data.draft)).sort(
 			.post-list a:hover img {
 				box-shadow: var(--box-shadow);
 			}
+			@media (max-width: 980px) {
+				.post-list {
+					grid-template-columns: repeat(2, 1fr);
+				}
+			}
 			@media (max-width: 720px) {
 				.post-list {
+					grid-template-columns: 1fr;
 					gap: 0.5em;
 				}
 				.post-list li {
-					width: 100%;
 					text-align: center;
 				}
 			}
