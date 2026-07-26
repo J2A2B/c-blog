@@ -32,8 +32,14 @@ import HeaderLink from './HeaderLink.astro';
 	}
 	nav {
 		display: flex;
+		flex-wrap: wrap;
 		align-items: center;
 		justify-content: space-between;
+		gap: 0.5em 1em;
+	}
+	.internal-links {
+		display: flex;
+		flex-wrap: wrap;
 	}
 	nav a {
 		padding: 1em 0.5em;
