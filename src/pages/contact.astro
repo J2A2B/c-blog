@@ -2,7 +2,7 @@
 import BaseHead from '../components/BaseHead.astro';
 import Footer from '../components/Footer.astro';
 import Header from '../components/Header.astro';
-import { SITE_CONTACT_EMAIL, SITE_TITLE } from '../consts';
+import { SITE_TITLE } from '../consts';
 ---
 
 <!doctype html>
@@ -17,9 +17,6 @@ import { SITE_CONTACT_EMAIL, SITE_TITLE } from '../consts';
 			<p>
 				Une question sur un article, une suggestion de sujet, un partenariat ou une erreur à
 				signaler ?
-			</p>
-			<p>
-				Écrivez-nous à <a href={`mailto:${SITE_CONTACT_EMAIL}`}>{SITE_CONTACT_EMAIL}</a>.
 			</p>
 		</main>
 		<Footer />
