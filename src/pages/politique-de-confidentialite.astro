@@ -2,7 +2,7 @@
 import BaseHead from '../components/BaseHead.astro';
 import Footer from '../components/Footer.astro';
 import Header from '../components/Header.astro';
-import { SITE_CONTACT_EMAIL, SITE_TITLE } from '../consts';
+import { SITE_TITLE } from '../consts';
 ---
 
 <!doctype html>
@@ -48,8 +48,8 @@ import { SITE_CONTACT_EMAIL, SITE_TITLE } from '../consts';
 			<h2>Vos droits</h2>
 			<p>
 				Conformément au RGPD, vous disposez d'un droit d'accès, de rectification et de suppression
-				des données vous concernant. Pour l'exercer, contactez-nous à
-				<a href={`mailto:${SITE_CONTACT_EMAIL}`}>{SITE_CONTACT_EMAIL}</a>.
+				des données vous concernant. Pour l'exercer, rendez-vous sur la page
+				<a href="/contact">contact</a>.
 			</p>
 
 			<h2>Publicité Google</h2>
