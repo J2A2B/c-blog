@@ -8,8 +8,7 @@ import netlify from '@astrojs/netlify';
 
 // https://astro.build/config
 export default defineConfig({
-  // Remplacer par le domaine définitif une fois le nom de domaine acheté et branché sur Netlify.
-  site: 'https://chat-appartement.netlify.app',
+  site: 'https://chat-appartement.fr',
   integrations: [mdx(), sitemap()],
 
   fonts: [

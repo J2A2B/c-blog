@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://chat-appartement.netlify.app/sitemap-index.xml
+Sitemap: https://chat-appartement.fr/sitemap-index.xml
