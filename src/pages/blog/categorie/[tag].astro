@@ -1,28 +1,50 @@
 ---
 import { Image } from 'astro:assets';
 import { getCollection } from 'astro:content';
-import BaseHead from '../../components/BaseHead.astro';
-import Footer from '../../components/Footer.astro';
-import FormattedDate from '../../components/FormattedDate.astro';
-import Header from '../../components/Header.astro';
-import { SITE_DESCRIPTION, SITE_TITLE } from '../../consts';
-import { CATEGORY_CONFIG } from '../../lib/categories';
+import BaseHead from '../../../components/BaseHead.astro';
+import Footer from '../../../components/Footer.astro';
+import FormattedDate from '../../../components/FormattedDate.astro';
+import Header from '../../../components/Header.astro';
+import { CATEGORY_CONFIG } from '../../../lib/categories';
 
-const posts = (await getCollection('blog', ({ data }) => !data.draft)).sort(
-	(a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf(),
-);
+export async function getStaticPaths() {
+	const posts = await getCollection('blog', ({ data }) => !data.draft);
+
+	return CATEGORY_CONFIG.map((category) => {
+		const categoryPosts = posts
+			.filter((post) => post.data.tags.some((tag) => category.tags.includes(tag)))
+			.sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf());
+
+		return {
+			params: { tag: category.slug },
+			props: { category, posts: categoryPosts },
+		};
+	});
+}
+
+const { category, posts } = Astro.props;
 ---
 
 <!doctype html>
 <html lang="fr">
 	<head>
-		<BaseHead
-			title={`Blog — Conseils et guides pour chat d'appartement | ${SITE_TITLE}`}
-			description="Tous nos articles sur la vie du chat en appartement : alimentation, enrichissement, litière, santé et matériel testé."
-		/>
+		<BaseHead title={category.pageTitle} description={category.pageDescription} />
 		<style>
 			main {
 				width: 960px;
+			}
+			.intro {
+				max-width: 720px;
+				margin: 0 0 2em 0;
+				color: rgb(var(--gray-dark));
+			}
+			.breadcrumb {
+				margin: 0 0 0.5em 0;
+				color: rgb(var(--gray));
+				font-size: 0.9em;
+			}
+			.breadcrumb a {
+				color: rgb(var(--gray));
 			}
 			ul {
 				display: flex;
@@ -88,47 +110,14 @@ const posts = (await getCollection('blog', ({ data }) => !data.draft)).sort(
 					font-size: 1.563em;
 				}
 			}
-			.categories-nav {
-				margin: 0 0 2em 0;
-				padding: 1em;
-				background: white;
-				border-radius: 12px;
-				box-shadow: var(--box-shadow);
-			}
-			.categories-nav p {
-				margin: 0 0 0.5em 0;
-				color: rgb(var(--gray));
-				font-size: 0.9em;
-			}
-			.categories-nav .categories-list {
-				display: flex;
-				flex-wrap: wrap;
-				gap: 0.75em;
-			}
-			.categories-nav a {
-				text-decoration: none;
-				color: rgb(var(--accent));
-				font-weight: bold;
-			}
-			.categories-nav a:hover {
-				text-decoration: underline;
-			}
 		</style>
 	</head>
 	<body>
 		<Header />
 		<main>
-			<h1>Blog chat d'appartement : tous nos articles</h1>
-			<nav class="categories-nav" aria-label="Catégories d'articles">
-				<p>Parcourir par catégorie :</p>
-				<div class="categories-list">
-					{
-						CATEGORY_CONFIG.map((category) => (
-							<a href={`/blog/categorie/${category.slug}/`}>{category.label}</a>
-						))
-					}
-				</div>
-			</nav>
+			<p class="breadcrumb"><a href="/blog">&larr; Tous les articles</a></p>
+			<h1>{category.pageTitle}</h1>
+			<p class="intro">{category.intro}</p>
 			<section>
 				<ul>
 					{
