@@ -1,0 +1,180 @@
+---
+import BaseHead from '../components/BaseHead.astro';
+import Footer from '../components/Footer.astro';
+import Header from '../components/Header.astro';
+---
+
+<!doctype html>
+<html lang="fr">
+	<head>
+		<BaseHead
+			title="Équipement pour chat d'appartement : le guide complet du matériel indispensable"
+			description="Quel équipement choisir pour un chat qui vit en appartement : arbre à chat, griffoir mural, litière anti-odeurs, distributeur de croquettes, fontaine à eau. Nos guides d'achat et tests, article par article."
+		/>
+		<style>
+			main {
+				width: 720px;
+			}
+			.intro {
+				color: rgb(var(--gray-dark));
+			}
+			.equipment-section {
+				margin: 2.5em 0;
+				padding: 1.5em;
+				background: white;
+				border-radius: 12px;
+				box-shadow: var(--box-shadow);
+			}
+			.equipment-section h2 {
+				margin-top: 0;
+				color: rgb(var(--accent-dark));
+			}
+			.equipment-section p {
+				color: rgb(var(--gray-dark));
+			}
+			.article-links {
+				list-style-type: none;
+				margin: 1em 0 0 0;
+				padding: 0;
+			}
+			.article-links li {
+				margin-bottom: 0.75em;
+			}
+			.article-links a {
+				font-weight: bold;
+				text-decoration: none;
+			}
+			.article-links a:hover {
+				text-decoration: underline;
+			}
+			.article-links .link-desc {
+				display: block;
+				margin-top: 0.15em;
+				font-weight: normal;
+				font-size: 0.9em;
+				color: rgb(var(--gray));
+			}
+		</style>
+	</head>
+	<body>
+		<Header />
+		<main>
+			<h1>Équipement pour chat d'appartement : le guide complet</h1>
+			<p class="intro">
+				Un chat qui vit exclusivement en appartement dépend entièrement du matériel que tu mets à
+				sa disposition pour compenser l'absence d'accès à l'extérieur : griffades, activité
+				physique, alimentation adaptée, hydratation et hygiène. Bien choisir cet équipement n'est
+				pas qu'une question de confort — c'est ce qui conditionne son bien-être physique et
+				mental au quotidien. Ce guide regroupe, type de matériel par type de matériel, nos
+				comparatifs et tests pour t'aider à équiper ton chat d'appartement sans te tromper.
+			</p>
+
+			<section class="equipment-section">
+				<h2>Griffoirs et arbres à chat</h2>
+				<p>
+					Griffer est un besoin naturel et incompressible chez le chat : marquage du territoire,
+					entretien des griffes, étirement musculaire. Sans support adapté, un chat d'intérieur se
+					reporte presque toujours sur le canapé ou les meubles. Un bon griffoir (ou arbre à chat)
+					doit être suffisamment stable et haut pour permettre un étirement complet — deux
+					critères souvent négligés dans les modèles d'entrée de gamme.
+				</p>
+				<ul class="article-links">
+					<li>
+						<a href="/blog/meilleur-arbre-a-chat-appartement/">
+							Meilleur arbre à chat pour appartement : guide d'achat
+						</a>
+						<span class="link-desc">
+							Les critères essentiels pour choisir un arbre à chat adapté à un petit espace, et les
+							erreurs à éviter.
+						</span>
+					</li>
+					<li>
+						<a href="/blog/meilleur-griffoir-mural-appartement/">
+							Meilleur griffoir mural pour appartement : guide d'achat
+						</a>
+						<span class="link-desc">
+							Comment préserver ses meubles avec un griffoir mural, sans sacrifier de surface au
+							sol.
+						</span>
+					</li>
+				</ul>
+			</section>
+
+			<section class="equipment-section">
+				<h2>Alimentation et hydratation</h2>
+				<p>
+					La sédentarité d'un chat d'appartement favorise la prise de poids et une alimentation
+					trop rapide peut causer des troubles digestifs. Côté hydratation, les chats sont
+					naturellement peu enclins à boire — un mauvais point d'eau se traduit vite par une
+					consommation insuffisante. Distributeurs anti-glouton, distributeurs réfrigérés et
+					fontaines à eau répondent chacun à un besoin différent.
+				</p>
+				<ul class="article-links">
+					<li>
+						<a href="/blog/meilleur-distributeur-croquettes-anti-glouton/">
+							Meilleur distributeur de croquettes anti-glouton : guide d'achat
+						</a>
+						<span class="link-desc">
+							Comment choisir une gamelle ou un distributeur anti-glouton pour ralentir la prise
+							alimentaire de son chat.
+						</span>
+					</li>
+					<li>
+						<a href="/blog/avis-petlibro-polar/">
+							PETLIBRO Polar : notre avis après 2 semaines d'utilisation
+						</a>
+						<span class="link-desc">
+							Test complet du distributeur de nourriture humide réfrigéré PETLIBRO Polar :
+							installation, réaction du chat, points forts et limites.
+						</span>
+					</li>
+					{
+						/*
+							À ajouter ici dès la publication de l'article "Meilleure fontaine à eau pour chat"
+							(src/content/blog/meilleure-fontaine-a-eau-chat.mdx, actuellement draft: true) :
+
+							<li>
+								<a href="/blog/meilleure-fontaine-a-eau-chat/">
+									Meilleure fontaine à eau pour chat : comparatif et guide d'achat
+								</a>
+								<span class="link-desc">
+									Comment choisir une fontaine à eau adaptée à ton chat : matériaux, niveau
+									sonore, capacité et facilité d'entretien.
+								</span>
+							</li>
+						*/
+					}
+				</ul>
+			</section>
+
+			<section class="equipment-section">
+				<h2>Litière</h2>
+				<p>
+					En appartement, la litière est l'équipement le plus sensible : mal choisie, elle peut
+					générer des odeurs difficiles à vivre dans un espace clos, ou décourager le chat de
+					l'utiliser, avec le risque de le voir se soulager ailleurs. Type de litière, contrôle
+					des odeurs et format du bac sont les critères déterminants pour un petit espace.
+				</p>
+				<ul class="article-links">
+					<li>
+						<a href="/blog/meilleure-litiere-anti-odeurs-appartement/">
+							Meilleure litière anti-odeurs pour appartement : guide d'achat
+						</a>
+						<span class="link-desc">
+							Types de litière, contrôle des odeurs et critères de choix pour un petit espace.
+						</span>
+					</li>
+				</ul>
+			</section>
+
+			<p>
+				Envie de creuser aussi le comportement et la santé de ton chat d'intérieur, au-delà du
+				matériel ? Retrouve tous nos articles sur la
+				<a href="/blog/categorie/comportement/">catégorie comportement</a>
+				et la <a href="/blog/categorie/sante/">catégorie santé</a>, ou parcours
+				<a href="/blog/">l'ensemble du blog</a>.
+			</p>
+		</main>
+		<Footer />
+	</body>
+</html>
