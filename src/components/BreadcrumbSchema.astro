@@ -1,0 +1,29 @@
+---
+// Données structurées Schema.org (JSON-LD) de type BreadcrumbList. Peut faire apparaître un
+// fil d'Ariane dans les résultats de recherche Google à la place de l'URL brute.
+// Voir https://schema.org/BreadcrumbList
+
+interface Crumb {
+	name: string;
+	path: string; // chemin relatif, ex: "/blog/mon-article/"
+}
+
+interface Props {
+	items: Crumb[];
+}
+
+const { items } = Astro.props;
+
+const schema = {
+	'@context': 'https://schema.org',
+	'@type': 'BreadcrumbList',
+	itemListElement: items.map((item, index) => ({
+		'@type': 'ListItem',
+		position: index + 1,
+		name: item.name,
+		item: new URL(item.path, Astro.site).toString(),
+	})),
+};
+---
+
+<script type="application/ld+json" set:html={JSON.stringify(schema)} />
