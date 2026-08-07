@@ -1,0 +1,16 @@
+---
+// Données structurées Schema.org (JSON-LD) de type WebSite, à placer une fois sur la
+// homepage. Identifie le site auprès de Google comme une entité cohérente.
+// Voir https://schema.org/WebSite
+import { SITE_DESCRIPTION, SITE_TITLE } from '../consts';
+
+const schema = {
+	'@context': 'https://schema.org',
+	'@type': 'WebSite',
+	name: SITE_TITLE,
+	description: SITE_DESCRIPTION,
+	url: Astro.site?.toString(),
+};
+---
+
+<script type="application/ld+json" set:html={JSON.stringify(schema)} />

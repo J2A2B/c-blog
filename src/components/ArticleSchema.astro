@@ -1,0 +1,46 @@
+---
+// Données structurées Schema.org (JSON-LD) de type BlogPosting pour un article de blog.
+// Aide Google à afficher des rich snippets (date, auteur, image) dans les résultats de
+// recherche. Voir https://schema.org/BlogPosting et
+// https://developers.google.com/search/docs/appearance/structured-data/article
+import type { ImageMetadata } from 'astro';
+import { getImage } from 'astro:assets';
+import { AUTHOR_NAME, SITE_TITLE } from '../consts';
+
+interface Props {
+	title: string;
+	description: string;
+	pubDate: Date;
+	updatedDate?: Date;
+	image?: ImageMetadata;
+}
+
+const { title, description, pubDate, updatedDate, image } = Astro.props;
+
+const canonicalURL = new URL(Astro.url.pathname, Astro.site);
+const socialImage = image ? await getImage({ src: image, width: 1200, height: 630, fit: 'cover' }) : undefined;
+
+const schema = {
+	'@context': 'https://schema.org',
+	'@type': 'BlogPosting',
+	headline: title,
+	description,
+	datePublished: pubDate.toISOString(),
+	dateModified: (updatedDate ?? pubDate).toISOString(),
+	author: {
+		'@type': 'Person',
+		name: AUTHOR_NAME,
+	},
+	publisher: {
+		'@type': 'Organization',
+		name: SITE_TITLE,
+	},
+	mainEntityOfPage: {
+		'@type': 'WebPage',
+		'@id': canonicalURL.toString(),
+	},
+	...(socialImage && { image: new URL(socialImage.src, Astro.url).toString() }),
+};
+---
+
+<script type="application/ld+json" set:html={JSON.stringify(schema)} />
