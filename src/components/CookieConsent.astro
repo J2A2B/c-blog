@@ -2,11 +2,18 @@
 // Bannière de consentement cookies "maison". Bloque le chargement de Google Analytics
 // tant que le visiteur n'a pas cliqué sur "Accepter". Le choix est mémorisé dans
 // localStorage pour ne plus redemander à chaque visite.
+//
+// GA ne doit jamais se charger en dev local (import.meta.env.PROD est false avec
+// `astro dev`, true uniquement pour un vrai `astro build`) : sinon les tests en local
+// polluent les vraies statistiques de production, et un consentement accepté en testant
+// la bannière reste dans le localStorage de localhost et redéclenche GA à chaque rechargement.
 import { GA_MEASUREMENT_ID } from '../consts';
+
+const isEnabled = import.meta.env.PROD && GA_MEASUREMENT_ID;
 ---
 
 {
-	GA_MEASUREMENT_ID && (
+	isEnabled && (
 		<div id="cookie-consent" class="cookie-consent" hidden>
 			<p>
 				Ce site utilise des cookies de mesure d'audience (Google Analytics) pour comprendre
@@ -26,7 +33,7 @@ import { GA_MEASUREMENT_ID } from '../consts';
 }
 
 {
-	GA_MEASUREMENT_ID && (
+	isEnabled && (
 		<script is:inline define:vars={{ GA_MEASUREMENT_ID }}>
 			function loadGoogleAnalytics(measurementId) {
 				const script = document.createElement('script');
