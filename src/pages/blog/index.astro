@@ -51,6 +51,10 @@ const posts = (await getCollection('blog', ({ data }) => !data.draft)).sort(
 				font-size: 2.369rem;
 			}
 			ul li img {
+				display: block;
+				width: 100%;
+				aspect-ratio: 2 / 1;
+				object-fit: cover;
 				margin-bottom: 0.5rem;
 				border-radius: 12px;
 			}

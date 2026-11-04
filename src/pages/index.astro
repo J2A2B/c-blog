@@ -72,6 +72,10 @@ const posts = (await getCollection('blog', ({ data }) => !data.draft)).sort(
 				transition: 0.2s ease;
 			}
 			.post-list li img {
+				display: block;
+				width: 100%;
+				aspect-ratio: 2 / 1;
+				object-fit: cover;
 				margin-bottom: 0.5rem;
 				border-radius: 12px;
 			}
