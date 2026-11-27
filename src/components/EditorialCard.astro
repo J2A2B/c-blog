@@ -2,21 +2,23 @@
 import { AUTHOR_BIO, AUTHOR_NAME, AUTHOR_PATH, AUTHOR_ROLE } from '../consts';
 ---
 
-<aside class="author-card" aria-labelledby="article-author-title">
-	<div class="author-avatar" aria-hidden="true">TG</div>
-	<div class="author-content">
-		<p class="author-label">À propos de l'auteur</p>
-		<h2 id="article-author-title">
+<aside class="editorial-card" aria-labelledby="editorial-card-title">
+	<div class="editorial-avatar" aria-hidden="true">CA</div>
+	<div class="editorial-content">
+		<p class="editorial-label">À propos de la rédaction</p>
+		<h2 id="editorial-card-title">
 			<a href={AUTHOR_PATH} rel="author">{AUTHOR_NAME}</a>
 		</h2>
-		<p class="author-role">{AUTHOR_ROLE}</p>
-		<p class="author-bio">{AUTHOR_BIO}</p>
-		<a class="author-link" href={AUTHOR_PATH} rel="author">Découvrir l'auteur et sa méthode</a>
+		<p class="editorial-role">{AUTHOR_ROLE}</p>
+		<p class="editorial-bio">{AUTHOR_BIO}</p>
+		<a class="editorial-link" href={AUTHOR_PATH} rel="author">
+			Découvrir notre méthode éditoriale
+		</a>
 	</div>
 </aside>
 
 <style>
-	.author-card {
+	.editorial-card {
 		display: grid;
 		grid-template-columns: 4rem 1fr;
 		gap: 1rem;
@@ -27,7 +29,7 @@ import { AUTHOR_BIO, AUTHOR_NAME, AUTHOR_PATH, AUTHOR_ROLE } from '../consts';
 		background: white;
 		box-shadow: 0 6px 20px rgba(var(--black), 6%);
 	}
-	.author-avatar {
+	.editorial-avatar {
 		display: grid;
 		width: 4rem;
 		height: 4rem;
@@ -38,44 +40,44 @@ import { AUTHOR_BIO, AUTHOR_NAME, AUTHOR_PATH, AUTHOR_ROLE } from '../consts';
 		font-weight: 700;
 		letter-spacing: 0.04em;
 	}
-	.author-content p {
+	.editorial-content p {
 		margin: 0;
 	}
-	.author-label {
+	.editorial-label {
 		color: rgb(var(--gray));
 		font-size: 0.8rem;
 		font-weight: 700;
 		letter-spacing: 0.05em;
 		text-transform: uppercase;
 	}
-	.author-content h2 {
+	.editorial-content h2 {
 		margin: 0.15rem 0 0;
 		font-size: 1.35rem;
 	}
-	.author-content h2 a {
+	.editorial-content h2 a {
 		color: rgb(var(--black));
 		text-decoration: none;
 	}
-	.author-content h2 a:hover {
+	.editorial-content h2 a:hover {
 		color: var(--accent);
 	}
-	.author-role {
+	.editorial-role {
 		color: rgb(var(--gray));
 		font-size: 0.9rem;
 	}
-	.author-bio {
+	.editorial-bio {
 		margin-top: 0.75rem !important;
 		font-size: 0.95rem;
 		line-height: 1.55;
 	}
-	.author-link {
+	.editorial-link {
 		display: inline-block;
 		margin-top: 0.75rem;
 		font-size: 0.9rem;
 		font-weight: 700;
 	}
 	@media (max-width: 540px) {
-		.author-card {
+		.editorial-card {
 			grid-template-columns: 1fr;
 		}
 	}

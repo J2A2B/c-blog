@@ -1,0 +1,205 @@
+---
+import BaseHead from '../components/BaseHead.astro';
+import BreadcrumbSchema from '../components/BreadcrumbSchema.astro';
+import Footer from '../components/Footer.astro';
+import Header from '../components/Header.astro';
+import { AUTHOR_NAME, AUTHOR_PATH, SITE_DESCRIPTION, SITE_TITLE } from '../consts';
+
+const canonicalURL = new URL(AUTHOR_PATH, Astro.site);
+const editorialSchema = {
+	'@context': 'https://schema.org',
+	'@type': 'AboutPage',
+	name: `Méthode éditoriale de ${SITE_TITLE}`,
+	url: canonicalURL.toString(),
+	description: SITE_DESCRIPTION,
+	mainEntity: {
+		'@type': 'Organization',
+		name: AUTHOR_NAME,
+		url: canonicalURL.toString(),
+	},
+};
+---
+
+<!doctype html>
+<html lang="fr">
+	<head>
+		<BaseHead
+			title={`Notre méthode éditoriale | ${SITE_TITLE}`}
+			description="Comment la rédaction de Chat d'Appartement choisit, vérifie et met à jour ses conseils, guides pratiques et retours d'expérience."
+		/>
+		<BreadcrumbSchema
+			items={[
+				{ name: 'Accueil', path: '/' },
+				{ name: 'Méthode éditoriale', path: AUTHOR_PATH },
+			]}
+		/>
+		<script type="application/ld+json" set:html={JSON.stringify(editorialSchema)} />
+		<style>
+			.editorial-page {
+				width: 760px;
+			}
+			.editorial-header {
+				display: grid;
+				grid-template-columns: 7rem 1fr;
+				align-items: center;
+				gap: 1.5rem;
+				margin-bottom: 2.5rem;
+				padding: 1.75rem;
+				border: 1px solid rgb(var(--gray-light));
+				border-radius: 16px;
+				background: white;
+				box-shadow: var(--box-shadow);
+			}
+			.editorial-avatar {
+				display: grid;
+				width: 7rem;
+				height: 7rem;
+				place-items: center;
+				border-radius: 50%;
+				background: var(--accent-dark);
+				color: white;
+				font-size: 2rem;
+				font-weight: 700;
+				letter-spacing: 0.04em;
+			}
+			.kicker {
+				margin: 0 0 0.25rem;
+				color: var(--accent-dark);
+				font-size: 0.8rem;
+				font-weight: 700;
+				letter-spacing: 0.06em;
+				text-transform: uppercase;
+			}
+			.editorial-header h1 {
+				margin-bottom: 0.25rem;
+			}
+			.header-copy {
+				margin: 0;
+				color: rgb(var(--gray));
+				font-size: 1rem;
+			}
+			.lead {
+				font-size: 1.15rem;
+			}
+			.principles {
+				display: grid;
+				grid-template-columns: repeat(3, 1fr);
+				gap: 1rem;
+				margin: 1.5rem 0 2.5rem;
+			}
+			.principle {
+				padding: 1rem;
+				border-radius: 12px;
+				background: white;
+				box-shadow: 0 4px 16px rgba(var(--black), 6%);
+			}
+			.principle h3 {
+				font-size: 1.05rem;
+			}
+			.principle p {
+				margin: 0;
+				font-size: 0.9rem;
+				line-height: 1.5;
+			}
+			.notice {
+				margin: 2rem 0;
+				padding: 1rem 1.25rem;
+				border-left: 4px solid var(--accent);
+				background: white;
+			}
+			@media (max-width: 720px) {
+				.editorial-header,
+				.principles {
+					grid-template-columns: 1fr;
+				}
+				.editorial-avatar {
+					width: 5rem;
+					height: 5rem;
+					font-size: 1.4rem;
+				}
+			}
+		</style>
+	</head>
+	<body>
+		<Header />
+		<main class="editorial-page">
+			<header class="editorial-header">
+				<div class="editorial-avatar" aria-hidden="true">CA</div>
+				<div>
+					<p class="kicker">Transparence</p>
+					<h1>Notre méthode éditoriale</h1>
+					<p class="header-copy">Comment les contenus de Chat d'Appartement sont préparés.</p>
+				</div>
+			</header>
+
+			<p class="lead">
+				Les articles sont publiés sous la signature <strong>{AUTHOR_NAME}</strong>. Cette signature
+				désigne la responsabilité éditoriale du site : elle ne correspond pas à un personnage fictif
+				et ne revendique aucune qualification vétérinaire.
+			</p>
+
+			<h2>Notre objectif</h2>
+			<p>
+				Chat d'Appartement répond aux questions concrètes que pose la vie d'un chat exclusivement en
+				intérieur : organisation de l'espace, activité, griffades, litière, alimentation, hydratation,
+				sécurité et choix du matériel. Les conseils cherchent à tenir compte des contraintes propres
+				aux logements urbains, comme le manque de place, le bruit et l'absence d'accès extérieur.
+			</p>
+
+			<h2>Nos principes de rédaction</h2>
+			<div class="principles">
+				<section class="principle">
+					<h3>Répondre concrètement</h3>
+					<p>
+						Chaque article part d'une question précise et doit proposer des actions applicables dans un
+						appartement.
+					</p>
+				</section>
+				<section class="principle">
+					<h3>Vérifier les points sensibles</h3>
+					<p>
+						Les sujets liés à la santé, au comportement et à la sécurité sont recoupés avec des
+						recommandations vétérinaires ou spécialisées.
+					</p>
+				</section>
+				<section class="principle">
+					<h3>Nommer la nature du contenu</h3>
+					<p>
+						Un retour d'expérience est présenté comme tel. Un guide non testé repose sur des critères de
+						choix et des informations techniques identifiables.
+					</p>
+				</section>
+			</div>
+
+			<h2>Tests et retours d'expérience</h2>
+			<p>
+				Lorsqu'un produit est réellement utilisé, l'article précise la durée du test, les conditions
+				d'utilisation et les limites observées. Les guides d'achat qui ne reposent pas sur un test
+				complet doivent l'indiquer et distinguer clairement les caractéristiques du fabricant des
+				conseils de la rédaction.
+			</p>
+
+			<div class="notice">
+				<strong>Important :</strong> la rédaction de Chat d'Appartement n'est pas un service
+				vétérinaire. Les contenus sont informatifs et ne remplacent ni un diagnostic ni une
+				consultation. En cas de symptôme soudain, persistant ou inquiétant, le bon interlocuteur reste
+				un vétérinaire.
+			</div>
+
+			<h2>Corrections et mises à jour</h2>
+			<p>
+				Les articles peuvent être corrigés ou enrichis lorsque de nouvelles informations deviennent
+				disponibles. Une erreur ou une formulation ambiguë peut être signalée depuis la
+				<a href="/contact">page de contact</a>.
+			</p>
+
+			<h2>Indépendance et financement</h2>
+			<p>
+				Certains contenus peuvent comporter des liens affiliés. Un achat réalisé par leur intermédiaire
+				peut générer une commission sans surcoût pour le lecteur. Ce financement ne doit pas modifier
+				les critères présentés, les limites signalées ni le résultat d'un test.
+			</p>
+		</main>
+		<Footer />
+	</body>
+</html>

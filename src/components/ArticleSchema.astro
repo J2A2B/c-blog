@@ -28,7 +28,7 @@ const schema = {
 	datePublished: pubDate.toISOString(),
 	dateModified: (updatedDate ?? pubDate).toISOString(),
 	author: {
-		'@type': 'Person',
+		'@type': 'Organization',
 		name: AUTHOR_NAME,
 		url: new URL(AUTHOR_PATH, Astro.site).toString(),
 	},

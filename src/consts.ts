@@ -5,12 +5,12 @@ export const SITE_TITLE = 'Chat d’Appartement';
 export const SITE_DESCRIPTION =
 	'Conseils, guides et bons plans pour bien vivre avec un chat en appartement : alimentation, enrichissement, santé et matériel testé.';
 
-export const AUTHOR_NAME = 'Tom Genois';
-export const AUTHOR_SLUG = 'tom-genois';
-export const AUTHOR_PATH = `/auteur/${AUTHOR_SLUG}/`;
-export const AUTHOR_ROLE = "Auteur et éditeur de Chat d'Appartement";
+export const AUTHOR_NAME = "Rédaction de Chat d'Appartement";
+export const AUTHOR_BYLINE = "la rédaction de Chat d'Appartement";
+export const AUTHOR_PATH = '/methode-editoriale/';
+export const AUTHOR_ROLE = 'La signature éditoriale du site';
 export const AUTHOR_BIO =
-	"Tom Genois partage son expérience de la vie avec un chat en appartement et transforme ses recherches en conseils pratiques, adaptés aux contraintes des logements urbains.";
+	"La rédaction prépare des guides pratiques adaptés à la vie des chats en intérieur, en distinguant les retours d'expérience, les critères de choix et les recommandations spécialisées.";
 
 // Identifiants de régie publicitaire / affiliation / mesure d'audience (à compléter avant mise en prod).
 export const ADSENSE_CLIENT_ID = ''; // ex: 'ca-pub-XXXXXXXXXXXXXXXX'
