@@ -1,5 +1,6 @@
 ---
 import AboutHeroImage from '../assets/blog-placeholder-about.jpg';
+import { AUTHOR_NAME, AUTHOR_PATH } from '../consts';
 import Layout from '../layouts/BlogPost.astro';
 ---
 
@@ -8,12 +9,20 @@ import Layout from '../layouts/BlogPost.astro';
 	description="Pourquoi ce blog dédié aux chats d'appartement, et qui l'écrit."
 	pubDate={new Date('2026-07-02')}
 	heroImage={AboutHeroImage}
+	showAuthor={false}
 >
 	<p>
 		<strong>Chat d'Appartement</strong> est né d'un constat simple : la majorité des chats en France
 		vivent aujourd'hui exclusivement en intérieur, mais peu de ressources en français traitent
 		spécifiquement de leurs besoins particuliers (enrichissement du territoire, gestion de l'ennui,
 		alimentation adaptée à une vie sédentaire, prévention du surpoids...).
+	</p>
+	<h2>Qui écrit les articles ?</h2>
+	<p>
+		Le site est écrit et édité par <a href={AUTHOR_PATH} rel="author">{AUTHOR_NAME}</a>, qui partage
+		son expérience de la vie avec un chat en appartement et ses recherches sur les besoins propres
+		aux chats d'intérieur. Sa page de présentation détaille sa démarche, ses critères de rédaction
+		et les limites des conseils proposés sur le site.
 	</p>
 	<p>
 		Ce blog partage des guides pratiques, des comparatifs de matériel (arbres à chat, litières,
